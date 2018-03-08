@@ -1,0 +1,32 @@
+{
+  "name": "red-instanews-app",
+  "version": "1.0.0",
+  "description": "Get lastest news from NYT ",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/jquery": "^1.10.34",
+    "@types/modernizr": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "typescript": "^2.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelsc/RED-Instanews-App.git"
+  },
+  "keywords": [
+    "RED",
+    "NYT",
+    "news"
+  ],
+  "author": "rafaelsc",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/rafaelsc/RED-Instanews-App/issues"
+  },
+  "homepage": "https://github.com/rafaelsc/RED-Instanews-App#readme"
+}
