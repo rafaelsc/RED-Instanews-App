@@ -3,6 +3,8 @@ var gulp = require("gulp"); // Load Gulp!
 var uglify = require("gulp-uglify"),
     rename = require("gulp-rename");
 
+var browserSync = require('browser-sync').create();
+
 gulp.task("default", function () {
     return gulp
         .src("./js/*.js") // What files do we want gulp to consume?
@@ -13,4 +15,13 @@ gulp.task("default", function () {
 
 gulp.task('watch', function () {
     gulp.watch('js/*.js', gulp.series('scripts'));
+});
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });
