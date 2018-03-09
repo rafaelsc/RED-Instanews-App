@@ -118,7 +118,7 @@ body{
 
 .header,
 .header > nav {
-    width: 100%;
+    /* width: 100%; */
     padding: 5px;
 
     display: inline-flex;
@@ -133,7 +133,7 @@ body{
 }
 
 .header > nav > label {
-    padding: 20px 10px;
+    padding: 20px 0;
 }
 
 .footer {
@@ -240,13 +240,46 @@ body{
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+
+    .header {
+        flex-direction: row;
+        /* align-items: center; */
+        /* justify-content: center; */
+    }
+
+    .header > nav {
+        align-items: flex-start;
+        /* justify-content: center; */
+    }
 }
+
+@media only screen and (min-width: 60em) {
+    /* Style adjustments for viewports that meet the condition */
+
+
+    body{
+        display: inline;
+    }
+
+    .header {
+        /* align-self: flex-start; */
+        /* align-items: flex-start; */
+        /* justify-content: center; */
+    }
+
+    .header > nav {
+        /* align-items: flex-start; */
+        /* justify-content: center; */
+    }
+}
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 1.25dppx),
        (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
+
 }
 
 /* ==========================================================================
