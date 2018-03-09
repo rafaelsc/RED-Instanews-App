@@ -8,6 +8,7 @@
     "@types/modernizr": "^3.5.1",
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^3.0.0",
     "typescript": "^2.7.2"
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/rafaelsc/RED-Instanews-App/issues"
   },
-  "homepage": "https://github.com/rafaelsc/RED-Instanews-App#readme"
+  "homepage": "https://github.com/rafaelsc/RED-Instanews-App#readme",
+  "dependencies": {
+    "spin.js": "^3.1.0"
+  }
 }

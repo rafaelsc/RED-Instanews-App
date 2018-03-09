@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Instanews - News from NY</title>
+    <title>Instanews - News from NYT</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,16 +23,44 @@
         <![endif]-->
 
     <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+
+    <header class="header">
+        <aside class="logo"></aside>
+        <nav>
+            <label for="sections">Choose a section:</label>
+            <select id="sections">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </nav>
+    </header>
+
+
+    <main class="hidden">
+        <div id="spin"></div>
+        <div id="news" class="card">
+            <div>LALA</div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div><i class="far fa-copyright"></i> Copyright 2018 Instanews</div>
+    </footer>
+
+    <!-- TODO Adds CRC for Scripts -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
-
     </script>
+
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 
 </html>
