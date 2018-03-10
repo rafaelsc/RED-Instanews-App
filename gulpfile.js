@@ -6,12 +6,12 @@ const eslint = require("gulp-eslint");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
-
+const prettyError = require("gulp-prettyerror");
 
 gulp.task("default", ["lint", "scripts", "sass", "browser-sync", "watch"]);
 
 gulp.task("watch", () => {
-    gulp.watch(["js/*.js", "css/*.css", "css/*.scss", "*.html"], ["sass", "reload"]);
+    gulp.watch(["js/*.js", "css/*.css", "css/*.scss", "*.html"], ["scripts", "sass", "reload"]);
 });
 
 gulp.task("browser-sync", () => {
@@ -22,7 +22,7 @@ gulp.task("browser-sync", () => {
     });
 });
 
-gulp.task("reload", function() {
+gulp.task("reload", () => {
     browserSync.reload();
  });
 
@@ -35,20 +35,21 @@ gulp.task("lint", () => {
 
 gulp.task("scripts", () => {
     return gulp
-            .src("./js/*.js") // What files do we want gulp to consume?
-            .pipe(uglify()) // Call the uglify function on these files
-            .pipe(rename({extname: ".min.js"})) // Rename the uglified file
-            .pipe(gulp.dest("./build/js")); // Where do we put the result?
-  });
+        .src("./js/*.js") // What files do we want gulp to consume?
+        .pipe(uglify()) // Call the uglify function on these files
+        .pipe(rename({extname: ".min.js"})) // Rename the uglified file
+        .pipe(gulp.dest("./build/js")); // Where do we put the result?
+});
 
 
 gulp.task("sass", () => {
     return gulp
-      .src("./css/main.scss")
-      .pipe(sass())
-      .pipe(autoprefixer({browsers: ["last 2 versions"]}))
-      .pipe(gulp.dest("./build/css"))
-      .pipe(cssnano())
-      .pipe(rename({extname: ".min.css"}))
-      .pipe(gulp.dest("./build/css"));
-  });
+        .src("./css/main.scss")
+        .pipe(prettyError())
+        .pipe(sass())
+        .pipe(autoprefixer({browsers: ["last 2 versions"]}))
+        .pipe(gulp.dest("./build/css"))
+        .pipe(cssnano())
+        .pipe(rename({extname: ".min.css"}))
+        .pipe(gulp.dest("./build/css"));
+});
