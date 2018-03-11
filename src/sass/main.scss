@@ -1,22 +1,74 @@
-/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
 
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+$basetextSize: 16px;
+$textColor: #fff;
+$backgroundColor: #111;
 
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
-
-    background-color: #111;
-    color: #fff;
-    font-size: 16px;
+html {
+    background-color: $backgroundColor;
+    color: $textColor;
+    font-size: $basetextSize;
     line-height: 1.4;
 }
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+   body{
+    width: 100%;
+    height: 100%;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    background-image: url("/img/nyt-logo.svg") ;
+    height: 220px;
+    width: 220px;
+}
+
+.header,
+.header > nav {
+    /* width: 100%; */
+    padding: 5px;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    /* height: calc(100vw - 25px); */
+    margin: auto auto;
+}
+
+.header > nav > label {
+    padding: 20px 0;
+}
+
+.footer {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+
+    text-transform: uppercase;
+
+    display: inline-flex;
+    justify-content: center;
+}
+
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -95,58 +147,6 @@ textarea {
     padding: 0.2em 0;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-body{
-    width: 100%;
-    height: 100%;
-
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    background-image: url("/img/nyt-logo.svg") ;
-    height: 220px;
-    width: 220px;
-}
-
-.header,
-.header > nav {
-    /* width: 100%; */
-    padding: 5px;
-
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header {
-    /* height: calc(100vw - 25px); */
-    margin: auto auto;
-}
-
-.header > nav > label {
-    padding: 20px 0;
-}
-
-.footer {
-    width: 100%;
-    height: 25px;
-    padding: 5px;
-
-    text-transform: uppercase;
-
-    display: inline-flex;
-    justify-content: center;
-}
 
 
 /* ==========================================================================
