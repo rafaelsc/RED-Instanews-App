@@ -14,7 +14,7 @@ const tsProject = ts.createProject("tsconfig.json");
 gulp.task("default", ["lint", "scripts", "sass", "browser-sync", "watch"]);
 
 gulp.task("watch", () => {
-   // gulp.watch(["./js/*.js", "./css/*.css", "./css/*.scss", "./*.html"], ["scripts", "sass", "reload"]);
+   gulp.watch(["./js/*.js", "./src/**/*.ts", "./css/*.css", "./src/**/*.scss", "./*.html"], ["scripts", "sass", "reload"]);
 });
 
 gulp.task("browser-sync", () => {
