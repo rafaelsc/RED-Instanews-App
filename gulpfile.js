@@ -8,8 +8,13 @@ const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
 const prettyError = require("gulp-prettyerror");
 const ts = require("gulp-typescript");
+const gutil = require("gulp-util");
+
+////
 
 const tsProject = ts.createProject("tsconfig.json");
+
+////
 
 gulp.task("default", ["lint", "scripts", "sass", "browser-sync", "watch"]);
 
@@ -40,18 +45,16 @@ gulp.task("scripts", () => {
     return gulp
         .src("./src/ts/*.ts")
         .pipe(tsProject())
-        .pipe(uglify())
-        .pipe(rename({extname: ".min.js"}))
         .pipe(gulp.dest("./build/js"));
-
-    // return gulp
-    //     .src("./js/*.js") // What files do we want gulp to consume?
-    //     .pipe(uglify()) // Call the uglify function on these files
-    //     .on("error", function (err) { gutil.log(gutil.colors.red("[Error]"), err.toString()); })
-    //     .pipe(rename({extname: ".min.js"})) // Rename the uglified file
-    //     .pipe(gulp.dest("./build/js")); // Where do we put the result?
 });
 
+gulp.task("mimify", () => {
+    return gulp
+        .src("./build/js/*.js")
+        .pipe(uglify())//.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+        .pipe(rename({extname: ".min.js"}))
+        .pipe(gulp.dest("./build/js"));
+});
 
 gulp.task("sass", () => {
     return gulp

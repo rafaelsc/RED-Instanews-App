@@ -1,0 +1,237 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Top Stories",
+    "description": "The Top Stories API provides lists of articles and associated images by section.",
+    "x-logo": {
+      "url": "img/logo_api_top_stories_150x150.png"
+    },
+    "x-lucy/readme": "The Top Stories API\n===================\n\nThe Top Stories API returns lists of articles and associated images that are currently on the specified section front.\nThe API supports JSON and JSONP.\n\n**Note:** In this document, curly braces { } indicate required items. Square\nbrackets [ ] indicate optional items or placeholders.\n\nTo use the Top Stories API, you must [sign up for an API\nkey](<http://developer.nytimes.com/apps/register>). Usage is limited to 1,000\nrequests per day (rate limits are subject to change). Please read and agree to\nthe [API Terms of Use](<http://developer.nytimes.com/tou>) and\nthe [Attribution Guidelines](<http://developer.nytimes.com/attribution>) before\nyou proceed.\n\nRequests\n--------\n\nThe Top Stories API uses\na [RESTful](<http://en.wikipedia.org/wiki/Representational_State_Transfer>) style.\nFor general tips on creating a request URI, see [Constructing a\nRequest](<http://developer.nytimes.com/docs/reference/requests>).\n\n\nUsage\n-----\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/topstories/v2/{section}.{response-format}?api-key={your-api-key}\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n*section* - The section name. The possible values are: home, arts, automobiles, books, business, fashion, food, health,\n  insider, magazine, movies, national, nyregion, obituaries, opinion, politics, realestate,\n  science, sports, sundayreview, technology, theater, tmagazine, travel, upshot, and world.\n \n*response-format* - The response format, either json or jsonp.\n  With jsonp the callback is set to the section name and 'TopStoriesCallback' (e.g. 'homeTopStoriesCallback').\n\n*api-key* - Your API key.\n\n\nExamples\n--------\n\nHere is a portion of a sample JSON response:\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n{\n    status: \"OK\",\n    copyright: \"Copyright (c) 2014 The New York Times Company. All Rights Reserved.\",\n    section: \"home\",\n    last_updated: \"2014-12-03T12:25:02-05:00\",\n    num_results: 22,\n    results: [\n        {\n            section: \"Business Day\",\n            subsection: \"Economy\",\n            title: \"New Round of Fiscal Battles in Congress Clouds the Economy\",\n            abstract: \"As another round of fiscal brinkmanship looms with Republican control of Congress, the impact on tax policy, government programs and the overall economy could be severe.\",\n            url: \"http://www.nytimes.com/2014/12/03/business/economy/uncertainty-in-washington-poses-long-list-of-economic-perils.html\",\n            byline: \"By JONATHAN WEISMAN\",\n            item_type: \"Article\",\n            updated_date: \"2014-12-02T20:44:18-5:00\",\n            created_date: \"2014-12-02T20:44:20-5:00\",\n            published_date: \"2014-12-03T00:00:00-5:00\",\n            material_type_facet: \"News\",\n            kicker: \"\",\n            des_facet: [\n                \"United States Politics and Government\",\n                \"United States Economy\",\n                \"Law and Legislation\",\n                \"Shutdowns (Institutional)\"\n            ],\n            org_facet: [\n                \"Democratic Party\",\n                \"Republican Party\"\n            ],\n            \"per_facet\":[  \n                \"Scott, Keith Lamont (1973-2016)\",\n                \"McCrory, Pat\"\n            ],\n            \"geo_facet\":[  \n                \"North Carolina\",\n                \"Charlotte (NC)\"\n            ],\n            multimedia:\n            [\n                {\n                    url: \"http://static01.nyt.com/images/2014/12/03/business/Economy/Economy-thumbStandard.jpg\",\n                    format: \"Standard Thumbnail\",\n                    height: 75,\n                    width: 75,\n                    type: \"image\",\n                    subtype: \"photo\",\n                    caption: \"Jeb Hensarling, chairman of the House Financial Services Committee, has opposed a long-term terrorism insurance bill.\",\n                    copyright: \"Chip Somodevilla/Getty Images\"\n                },\n                ...\n            ]\n        },\n        ...\n    ]\n}\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nSupported Multimedia Options\n----------------------------\n\nEach result, if available, includes a multimedia payload. We include up to 5\nimage sizes, whichever are available for that article. For almost all of\nresults, they will all be there.\n\nThose image sizes are as follows, with the width and height if those are\nconstant. Some vary depending on whether the image is landscape or portrait.\n\n| Image Name          | Width | Height |\n|---------------------|-------|--------|\n| Standard Thumbnail  | 75    | 75     |\n| thumbLarge          | 150   | 150    |\n| Normal              | 190   |        |\n| mediumThreeByTwo210 |       | 210    |\n| superJumbo          |       |        |\n\n"
+  },
+  "host": "api.nytimes.com",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "basePath": "/svc/topstories/v2",
+  "produces": [
+    "application/json"
+  ],
+  "security": [
+    {
+      "apikey": []
+    }
+  ],
+  "paths": {
+    "/{section}.{format}": {
+      "get": {
+        "operationId": "TopStories",
+        "summary": "Top Stories",
+        "description": "The Top Stories API returns a list of articles and associated images currently on the specified section.  Support JSON and JSONP.\n",
+        "parameters": [
+          {
+            "name": "section",
+            "in": "path",
+            "description": "The section the story appears in.",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "home",
+              "opinion",
+              "world",
+              "national",
+              "politics",
+              "upshot",
+              "nyregion",
+              "business",
+              "technology",
+              "science",
+              "health",
+              "sports",
+              "arts",
+              "books",
+              "movies",
+              "theater",
+              "sundayreview",
+              "fashion",
+              "tmagazine",
+              "food",
+              "travel",
+              "magazine",
+              "realestate",
+              "automobiles",
+              "obituaries",
+              "insider"
+            ],
+            "x-consoleDefault": "home"
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "description": "if this is JSONP or JSON",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "json",
+              "jsonp"
+            ],
+            "x-consoleDefault": "json"
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "The name of the function the API call results will be passed to. Required when using JSONP. This parameter has only one valid value per section. The format is {section_name}TopStoriesCallback.\n",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Stories"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of articles",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Article"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Article": {
+      "type": "object",
+      "properties": {
+        "section": {
+          "type": "string"
+        },
+        "subsection": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "abstract": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "thumbnail_standard": {
+          "type": "string"
+        },
+        "short_url": {
+          "type": "string"
+        },
+        "byline": {
+          "type": "string"
+        },
+        "item_type": {
+          "type": "string"
+        },
+        "updated_date": {
+          "type": "string"
+        },
+        "created_date": {
+          "type": "string"
+        },
+        "published_date": {
+          "type": "string"
+        },
+        "material_type_facet": {
+          "type": "string"
+        },
+        "kicker": {
+          "type": "string"
+        },
+        "des_facet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "org_facet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "per_facet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "geo_facet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "multimedia": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "format": {
+                "type": "string"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "type": {
+                "type": "string"
+              },
+              "subtype": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "copyright": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "related_urls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "suggested_link_text": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "apikey": {
+      "type": "apiKey",
+      "name": "api-key",
+      "in": "query"
+    }
+  }
+}
