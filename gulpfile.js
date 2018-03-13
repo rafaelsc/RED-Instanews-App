@@ -9,6 +9,7 @@ const cssnano = require("gulp-cssnano");
 const prettyError = require("gulp-prettyerror");
 const ts = require("gulp-typescript");
 const gutil = require("gulp-util");
+const del = require("del");
 
 ////
 
@@ -16,10 +17,12 @@ const tsProject = ts.createProject("tsconfig.json");
 
 ////
 
-gulp.task("default", ["lint", "scripts", "sass", "browser-sync", "watch"]);
+gulp.task("default", ["clean", "lint", "scripts", "mimify", "sass", "browser-sync", "watch"]);
+
+gulp.task("clean", () => del.sync(["./build/"]) );
 
 gulp.task("watch", () => {
-   gulp.watch(["./js/*.js", "./src/**/*.ts", "./css/*.css", "./src/**/*.scss", "./*.html"], ["scripts", "sass", "reload"]);
+   gulp.watch(["./js/*.js", "./src/**/*.ts", "./css/*.css", "./src/**/*.scss", "./*.html"], ["scripts", "mimify", "sass", "reload"]);
 });
 
 gulp.task("browser-sync", () => {
