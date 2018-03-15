@@ -10,8 +10,8 @@
   "codeGenerators": {
     "swaggerToTypeScriptClient": {
       "className": "{controller}Client",
-      "moduleName": "nyt.api",
-      "namespace": "nyt.api.topstores",
+      "moduleName": "",
+      "namespace": "",
       "typeScriptVersion": 2.7,
       "template": "JQueryCallbacks",
       "promiseType": "Promise",

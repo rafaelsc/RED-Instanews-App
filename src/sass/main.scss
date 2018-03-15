@@ -1,7 +1,7 @@
-
 $basetextSize: 16px;
 $textColor: #fff;
 $backgroundColor: #111;
+$newsTextColor: #c2c2c2;
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -11,64 +11,69 @@ html {
     background-color: $backgroundColor;
     color: $textColor;
     font-size: $basetextSize;
+    font-family: 'Open Sans', sans-serif;
+
     line-height: 1.4;
 }
 
-
 /* ==========================================================================
-   Author's custom styles
+   Custom styles
    ========================================================================== */
 
-
-
-   body{
+body {
     width: 100%;
     height: 100%;
-
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.logo {
-    background-image: url("/img/nyt-logo.svg") ;
-    height: 220px;
-    width: 220px;
-}
-
-.header,
-.header > nav {
-    /* width: 100%; */
-    padding: 5px;
-
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .header {
-    /* height: calc(100vw - 25px); */
-    margin: auto auto;
+    padding: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+        background-image: url("/img/nyt-logo.svg");
+        height: 220px;
+        width: 220px;
+    }
+    nav {
+        padding: 5px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        label {
+            padding: 20px 0;
+        }
+    }
 }
 
-.header > nav > label {
-    padding: 20px 0;
-}
+// .header,
+// .header > nav {
+//     /* width: 100%; */
+//     padding: 5px;
+//     display: inline-flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+// }
+// .header > nav > label {
+//     padding: 20px 0;
+// }
 
 .footer {
     width: 100%;
     height: 25px;
     padding: 5px;
-
     text-transform: uppercase;
-
     display: inline-flex;
     justify-content: center;
 }
-
-
 
 /*
  * Remove text-shadow in selection highlight:
@@ -147,8 +152,6 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -181,7 +184,8 @@ textarea {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -225,8 +229,10 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
@@ -241,14 +247,12 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
-
     .header {
         flex-direction: row;
         /* align-items: center; */
         /* justify-content: center; */
     }
-
-    .header > nav {
+    .header>nav {
         align-items: flex-start;
         /* justify-content: center; */
     }
@@ -256,31 +260,25 @@ textarea {
 
 @media only screen and (min-width: 60em) {
     /* Style adjustments for viewports that meet the condition */
-
-
-    body{
+    body {
         display: inline;
     }
-
     .header {
         /* align-self: flex-start; */
         /* align-items: flex-start; */
         /* justify-content: center; */
     }
-
-    .header > nav {
+    .header>nav {
         /* align-items: flex-start; */
         /* justify-content: center; */
     }
 }
 
-
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
-
 }
 
 /* ==========================================================================
@@ -294,35 +292,30 @@ textarea {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
@@ -331,28 +324,23 @@ textarea {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;

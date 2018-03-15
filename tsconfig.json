@@ -1,12 +1,17 @@
 {
     "compilerOptions": {
+        "module": "none",
         // "module": "system",
         // "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "declaration": true,
-        "target": "es3"
+        "declaration": false,
+        "target": "es3",
+        "downlevelIteration": true,
+        "lib": [
+            "dom"
+        ]
     },
     "include": [
         "src/**/*"

@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/build/css/main.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
 </head>
 
 <body>
@@ -30,10 +31,34 @@
             <label for="sections">Choose a section:</label>
             <select id="sections">
                 <option>Sections...</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+
+                <option value="home">Home</option>
+                <option value="opinion">Opinion</option>
+                <option value="world">World</option>
+                <option value="national">National</option>
+                <option value="politics">Politics</option>
+                <option value="upshot">Upshot</option>
+                <option value="nyregion">Nyregion</option>
+                <option value="business">Business</option>
+                <option value="technology">Technology</option>
+                <option value="science">Science</option>
+                <option value="health">Health</option>
+                <option value="sports">Sports</option>
+                <option value="arts">Arts</option>
+                <option value="books">Books</option>
+                <option value="movies">Movies</option>
+                <option value="theater">Theater</option>
+                <option value="sundayreview">Sundayreview</option>
+                <option value="fashion">Fashion</option>
+                <option value="tmagazine">Tmagazine</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="magazine">Magazine</option>
+                <option value="realestate">Realestate</option>
+                <option value="automobiles">Automobiles</option>
+                <option value="obituaries">Obituaries</option>
+                <option value="insider">Insider</option>
+
             </select>
         </nav>
     </header>
@@ -51,6 +76,16 @@
         <div><i class="far fa-copyright"></i> Copyright 2018 Instanews</div>
     </footer>
 
+    <!-- Templates -->
+    <script id="theTmpl" type="text/x-jsrender">
+        <div>
+           <em>Name:</em> {{:name}}
+           {{if showNickname && nickname}}
+              (Goes by <em>{{:nickname}}</em>)
+           {{/if}}
+        </div>
+    </script>
+
     <!-- TODO Adds CRC for Scripts -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -58,8 +93,13 @@
         window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
     </script>
 
+    <script src="//www.jsviews.com/download/jsrender.js"></script>
+    <script>
+        window.jQuery.templates || document.write('<script src="js/vendor/jsrender.min.js"><\/script>')
+    </script>
+
     <script src="js/plugins.js"></script>
-    <script src="build/js/main.min.js"></script>
+    <script defer src="build/js/main.min.js"></script>
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>

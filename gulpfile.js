@@ -53,7 +53,7 @@ gulp.task("scripts", () => {
 
 gulp.task("mimify", () => {
     return gulp
-        .src("./build/js/*.js")
+        .src(["./build/js/*.js", "!**/*.min.js"])
         .pipe(uglify())//.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
         .pipe(rename({extname: ".min.js"}))
         .pipe(gulp.dest("./build/js"));
