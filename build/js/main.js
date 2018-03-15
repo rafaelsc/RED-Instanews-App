@@ -25,7 +25,9 @@ $(function () {
             url: url,
             method: 'GET'
         }).done(function (result) {
-            var data = result.results.slice(0, 12).map(function (val) {
+            var data = result.results.filter(function (r) { return r.multimedia && r.multimedia.length > 0; })
+                .slice(0, 12)
+                .map(function (val) {
                 var img = val.multimedia[0] && val.multimedia[0].url || null;
                 var imgCap = val.multimedia[0] && val.multimedia[0].caption || null;
                 return {

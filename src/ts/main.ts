@@ -37,7 +37,9 @@ $(() => {
         }).done((result) => {
             // console.log(result);
 
-            var data = result.results.slice(0, 12).map((val) => {
+            var data = result.results.filter( r => r.multimedia && r.multimedia.length > 0 )
+                                     .slice(0, 12)
+                                     .map((val) => {
                 var img = val.multimedia[0] && val.multimedia[0].url || null;
                 var imgCap = val.multimedia[0] && val.multimedia[0].caption || null;
                 return {
