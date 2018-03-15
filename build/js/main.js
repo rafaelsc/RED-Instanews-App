@@ -1,14 +1,23 @@
 $(function () {
+    var newsTemplate = $.templates("#news-item-template");
     var $menu = $("#sections");
     var $spin = $("#spin");
+    var $news = $("#news");
     $spin.hide();
+    setTimeout(function () {
+        console.log("Debug...");
+        $menu.val("world");
+        $menu.change();
+    }, 1000);
     $menu.change(function () {
         console.log("menu change");
         var val = $menu.val();
         if (!val) {
+            $news.hide();
             return;
         }
-        var url = "https://api.nytimes.com/svc/topstories/v2/" + val + ".json";
+        $spin.show();
+        var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
             'api-key': "7dd8ef3de3434176a64908eb393d70db"
         });
@@ -16,11 +25,21 @@ $(function () {
             url: url,
             method: 'GET'
         }).done(function (result) {
-            console.log(result);
+            var data = result.results.slice(0, 12).map(function (val) {
+                var img = val.multimedia[0] && val.multimedia[0].url || null;
+                var imgCap = val.multimedia[0] && val.multimedia[0].caption || null;
+                return {
+                    "title": val.title,
+                    "linkUrl": val.short_url,
+                    "img": img,
+                    "imgCap": imgCap
+                };
+            });
+            console.log(data);
+            var htmlOutput = newsTemplate.render(data);
+            $news.html(htmlOutput);
         }).fail(function (err) {
             throw err;
-        });
-        console.log("Done");
-        $spin.show();
+        }).always(function () { return $spin.hide(); });
     });
 });

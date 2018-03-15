@@ -30,7 +30,7 @@
         <nav>
             <label for="sections">Choose a section:</label>
             <select id="sections">
-                <option>Sections...</option>
+                <option>Select a section...</option>
 
                 <option value="home">Home</option>
                 <option value="opinion">Opinion</option>
@@ -63,28 +63,45 @@
         </nav>
     </header>
 
-
-    <main class="hidden">
+    <main class="">
         <div id="spin"></div>
-        <div id="news" class="card">
+        <div id="news" class="card-container">
             <div>LALA</div>
         </div>
     </main>
-
 
     <footer class="footer">
         <div><i class="far fa-copyright"></i> Copyright 2018 Instanews</div>
     </footer>
 
     <!-- Templates -->
-    <script id="theTmpl" type="text/x-jsrender">
-        <div>
-           <em>Name:</em> {{:name}}
-           {{if showNickname && nickname}}
-              (Goes by <em>{{:nickname}}</em>)
-           {{/if}}
+    <script id="news-item-template" type="text/x-jsrender">
+        <div class="news grid-item">
+            <a href="{{:linkUrl}}" target="_blank" rel="noopener noreferrer nofollow">
+                <figure>
+                    <div class="img-holder">
+                    {{if img}}
+                        <img class="img" src="{{:img}}" alt="{{:imgCap}}">
+                    {{else}}
+                        <div class="no-img"></div>
+                    {{/if}}
+                    </div>
+                    <figcaption>{{:title}}</figcaption>
+                </figure>
+            </a>
         </div>
     </script>
+<!--
+    <div>
+        <a href="{{:linkUrl}}" target="_blank" rel="noopener noreferrer nofollow">
+            <figure>
+                {{if img}}
+                    <img src="{{:img}}" alt="{{:imgCap}}">
+                {{/if}}
+                <figcaption>{{:title}}</figcaption>
+            </figure>
+        </a>
+    </div> -->
 
     <!-- TODO Adds CRC for Scripts -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>

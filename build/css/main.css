@@ -65,6 +65,19 @@ body {
     .header nav label {
       padding: 20px 0; }
 
+.news {
+  display: inline; }
+  .news .card-container {
+    display: block; }
+  .news .img-holder {
+    height: 80px;
+    width: 80px;
+    background-image: url("/img/nyt-logo.svg");
+    background-size: 80px; }
+    .news .img-holder .no-img {
+      width: 100%;
+      height: 100%; }
+
 .footer {
   width: 100%;
   height: 25px;
