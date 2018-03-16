@@ -33,7 +33,7 @@ gulp.task("browser-sync", () => {
     });
 });
 
-gulp.task("reload", () => {
+gulp.task("reload", ["mimify", "sass"], () => {
     browserSync.reload();
  });
 
@@ -51,7 +51,7 @@ gulp.task("scripts", () => {
         .pipe(gulp.dest("./build/js"));
 });
 
-gulp.task("mimify", () => {
+gulp.task("mimify", ["scripts"], () => {
     return gulp
         .src(["./build/js/*.js", "!**/*.min.js"])
         .pipe(uglify())//.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })

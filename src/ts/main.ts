@@ -1,6 +1,6 @@
 $(() => {
     const newsTemplate = $.templates("#news-item-template");
-    const $header = $("#header");
+    const $header = $(".header");
     const $menu = $("#sections");
     const $spin = $("#spin");
     const $news = $("#news");
@@ -36,12 +36,13 @@ $(() => {
             url: url,
             method: 'GET',
         }).done((result) => {
-            // console.log(result);
+            // console. log(result);
 
             var data = result.results.filter(r => r.multimedia && r.multimedia.length > 0 )
                                      .slice(0, 12)
                                      .map((val) => {
-                const img = val.multimedia.slice(0,4).reverse().slice(0,1);
+                const img = val.multimedia.slice(0,4).reverse().slice(0,1)[0];
+                // console.log(img);
                 return {
                     "title": val.title,
                     "linkUrl" : val.short_url,
@@ -53,9 +54,9 @@ $(() => {
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
 
-            console.log("To Samll");
+            // console.log("To Samll");
             $header.addClass("small");
-            console.log("Done");
+            // console.log("Done");
 
         }).fail((err) => {
             throw err;

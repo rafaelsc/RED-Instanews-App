@@ -1,6 +1,6 @@
 $(function () {
     var newsTemplate = $.templates("#news-item-template");
-    var $header = $("#header");
+    var $header = $(".header");
     var $menu = $("#sections");
     var $spin = $("#spin");
     var $news = $("#news");
@@ -28,7 +28,7 @@ $(function () {
             var data = result.results.filter(function (r) { return r.multimedia && r.multimedia.length > 0; })
                 .slice(0, 12)
                 .map(function (val) {
-                var img = val.multimedia.slice(0, 4).reverse().slice(0, 1);
+                var img = val.multimedia.slice(0, 4).reverse().slice(0, 1)[0];
                 return {
                     "title": val.title,
                     "linkUrl": val.short_url,
@@ -38,9 +38,7 @@ $(function () {
             });
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-            console.log("To Samll");
             $header.addClass("small");
-            console.log("Done");
         }).fail(function (err) {
             throw err;
         }).always(function () { return $spin.hide(); });
