@@ -28,7 +28,7 @@ $(function () {
             var data = result.results.filter(function (r) { return r.multimedia && r.multimedia.length > 0; })
                 .slice(0, 12)
                 .map(function (val) {
-                var img = val.multimedia.slice(0, 4).reverse().slice(0, 1)[0];
+                var img = val.multimedia.slice(0, 6).reverse().slice(0, 1)[0];
                 return {
                     "title": val.title,
                     "linkUrl": val.short_url,

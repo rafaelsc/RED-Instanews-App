@@ -41,7 +41,7 @@ $(() => {
             var data = result.results.filter(r => r.multimedia && r.multimedia.length > 0 )
                                      .slice(0, 12)
                                      .map((val) => {
-                const img = val.multimedia.slice(0,4).reverse().slice(0,1)[0];
+                const img = val.multimedia.slice(0,6).reverse().slice(0,1)[0];
                 // console.log(img);
                 return {
                     "title": val.title,
