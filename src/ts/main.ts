@@ -1,5 +1,6 @@
 $(() => {
     const newsTemplate = $.templates("#news-item-template");
+    const $header = $("#header");
     const $menu = $("#sections");
     const $spin = $("#spin");
     const $news = $("#news");
@@ -11,13 +12,13 @@ $(() => {
         console.log("Debug...");
         $menu.val("world");
         $menu.change();
-    },1000)
+    },500)
 
     //
 
     $menu.change(() => {
 
-        console.log("menu change");
+        // console.log("menu change");
 
         const val = $menu.val();
         if (!val) {
@@ -37,22 +38,24 @@ $(() => {
         }).done((result) => {
             // console.log(result);
 
-            var data = result.results.filter( r => r.multimedia && r.multimedia.length > 0 )
+            var data = result.results.filter(r => r.multimedia && r.multimedia.length > 0 )
                                      .slice(0, 12)
                                      .map((val) => {
-                var img = val.multimedia[0] && val.multimedia[0].url || null;
-                var imgCap = val.multimedia[0] && val.multimedia[0].caption || null;
+                const img = val.multimedia.slice(0,4).reverse().slice(0,1);
                 return {
                     "title": val.title,
                     "linkUrl" : val.short_url,
-                    "img": img,
-                    "imgCap": imgCap
+                    "img": img.url,
+                    "imgCap": img.caption
                 }
             });
-            console.log(data);
+            // console.log(data);
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-            // console.log(htmlOutput);
+
+            console.log("To Samll");
+            $header.addClass("small");
+            console.log("Done");
 
         }).fail((err) => {
             throw err;

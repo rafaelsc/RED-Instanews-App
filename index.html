@@ -30,7 +30,7 @@
         <nav>
             <label for="sections">Choose a section:</label>
             <select id="sections">
-                <option>Select a section...</option>
+                <option value="">Select a section...</option>
 
                 <option value="home">Home</option>
                 <option value="opinion">Opinion</option>
@@ -65,8 +65,7 @@
 
     <main class="">
         <div id="spin"></div>
-        <div id="news" class="card-container">
-            <div>LALA</div>
+        <div id="news" class="news">
         </div>
     </main>
 
@@ -76,7 +75,7 @@
 
     <!-- Templates -->
     <script id="news-item-template" type="text/x-jsrender">
-        <div class="news grid-item">
+        <div class="news-item">
             <a href="{{:linkUrl}}" target="_blank" rel="noopener noreferrer nofollow">
                 <figure>
                     <div class="img-holder">

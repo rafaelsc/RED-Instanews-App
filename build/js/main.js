@@ -1,5 +1,6 @@
 $(function () {
     var newsTemplate = $.templates("#news-item-template");
+    var $header = $("#header");
     var $menu = $("#sections");
     var $spin = $("#spin");
     var $news = $("#news");
@@ -8,9 +9,8 @@ $(function () {
         console.log("Debug...");
         $menu.val("world");
         $menu.change();
-    }, 1000);
+    }, 500);
     $menu.change(function () {
-        console.log("menu change");
         var val = $menu.val();
         if (!val) {
             $news.hide();
@@ -28,18 +28,19 @@ $(function () {
             var data = result.results.filter(function (r) { return r.multimedia && r.multimedia.length > 0; })
                 .slice(0, 12)
                 .map(function (val) {
-                var img = val.multimedia[0] && val.multimedia[0].url || null;
-                var imgCap = val.multimedia[0] && val.multimedia[0].caption || null;
+                var img = val.multimedia.slice(0, 4).reverse().slice(0, 1);
                 return {
                     "title": val.title,
                     "linkUrl": val.short_url,
-                    "img": img,
-                    "imgCap": imgCap
+                    "img": img.url,
+                    "imgCap": img.caption
                 };
             });
-            console.log(data);
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
+            console.log("To Samll");
+            $header.addClass("small");
+            console.log("Done");
         }).fail(function (err) {
             throw err;
         }).always(function () { return $spin.hide(); });

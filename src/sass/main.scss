@@ -2,7 +2,6 @@ $basetextSize: 16px;
 $textColor: #fff;
 $backgroundColor: #111;
 $newsTextColor: #c2c2c2;
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -12,7 +11,6 @@ html {
     color: $textColor;
     font-size: $basetextSize;
     font-family: 'Open Sans', sans-serif;
-
     line-height: 1.4;
 }
 
@@ -37,9 +35,12 @@ body {
     justify-content: center;
 
     .logo {
+        background-size: cover;
         background-image: url("/img/nyt-logo.svg");
-        height: 220px;
-        width: 220px;
+        // height: 220px;
+        // width: 220px;
+        height: 60px;
+        width: 60px;
     }
     nav {
         padding: 5px;
@@ -51,36 +52,66 @@ body {
             padding: 20px 0;
         }
     }
+
+    &.small{
+        .logo{
+            height: 60px;
+            width: 60px;
+        }
+    }
 }
 
-.news{
-    display: inline;
-
-    .card-container{
-        display: block;
-    }
-
-    .card-item{
-
-    }
-
-    .img-holder{
-        height: 80px;
-        width: 80px;
-
-        background-image: url("/img/nyt-logo.svg");
-        background-size: 80px;
-
-        img {
-
+.news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    .news-item {
+        display: flex;
+        width: 100%;
+        @media(min-width: 35rem) {
+            width: 33.3333%;
         }
-        .no-img{
-            width: 100%;
-            height: 100%;
-
+        @media(min-width: 60rem) {
+            width: 25%;
         }
+        figure {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            .img-holder {
+                //                 &::before {
+                //     content: "";
+                //     display: block;
+                //     padding-top: 56.25%;
+                //   }
+            }
+            img {
+                object-fit: fill;
+                width: 100%;
+                // max-width: 25%;
+            }
+            figcaption {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.75);
+                color: white;
+                padding: 10px 20px;
+            }
+        } // .img-holder {
+        //     height: 80px;
+        //     width: 80px;
+        //     background-image: url("/img/nyt-logo.svg");
+        //     background-size: 80px;
+        //     img {
+        //     }
+        //     .no-img {
+        //         width: 100%;
+        //         height: 100%;
+        //     }
+        // }
     }
-
 }
 
 .footer {
