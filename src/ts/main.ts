@@ -8,11 +8,11 @@ $(() => {
     $spin.hide()
 
     //Debug
-    setTimeout(()=>{
-        console.log("Debug...");
-        $menu.val("world");
-        $menu.change();
-    },500)
+    // setTimeout(()=>{
+    //     console.log("Debug...");
+    //     $menu.val("world");
+    //     $menu.change();
+    // },500)
 
     //
 
@@ -55,7 +55,7 @@ $(() => {
             $news.html(htmlOutput);
 
             // console.log("To Samll");
-            $header.addClass("small");
+            $header.addClass("dataLoaded");
             // console.log("Done");
 
         }).fail((err) => {

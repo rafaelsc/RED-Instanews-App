@@ -5,11 +5,6 @@ $(function () {
     var $spin = $("#spin");
     var $news = $("#news");
     $spin.hide();
-    setTimeout(function () {
-        console.log("Debug...");
-        $menu.val("world");
-        $menu.change();
-    }, 500);
     $menu.change(function () {
         var val = $menu.val();
         if (!val) {
@@ -38,7 +33,7 @@ $(function () {
             });
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-            $header.addClass("small");
+            $header.addClass("dataLoaded");
         }).fail(function (err) {
             throw err;
         }).always(function () { return $spin.hide(); });

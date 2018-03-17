@@ -20,17 +20,21 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
-    // display: inline-flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
+    height: 100vh;
 
-    // margin: 0 auto;
+    // overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // flex: 1 0 auto;
 }
 
 .header {
-    padding: 5px;
+    flex: 1 0 auto;
+
+    padding: 10vw;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -39,10 +43,10 @@ body {
     .logo {
         background-size: cover;
         background-image: url("/img/nyt-logo.svg");
-        // height: 220px;
-        // width: 220px;
-        height: 60px;
-        width: 60px;
+        height: 50vw;
+        max-height: 300px;
+        width: 50vw;
+        max-width: 300px;
     }
     nav {
         padding: 5px;
@@ -55,21 +59,33 @@ body {
         }
     }
 
-    &.small{
-        .logo{
-            height: 60px;
-            width: 60px;
-        }
-    }
+    // &.dataLoaded{
+
+    //     @media(min-width: 35rem) {
+    //         // width: 33.3333%;
+    //     }
+    //     @media(min-width: 60rem) {
+    //         // width: 25%;
+    //     }
+
+    //     // .logo{
+    //     //     height: 60px;
+    //     //     width: 60px;
+    //     // }
+    // }
 }
 
 .news {
+    flex: 1 0 auto;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // margin: 0;
-    // padding: 0;
+
     box-sizing: border-box;
+
+    font-size: 50%;
+
     .news-item {
         // display: flex;
         width: 100%;
@@ -126,12 +142,19 @@ body {
 }
 
 .footer {
-    width: 100%;
-    height: 25px;
-    padding: 5px 0;
-    text-transform: uppercase;
+    flex-shrink: 0;
+
+    padding: 2rem 0px 1rem 0px;
     display: inline-flex;
     justify-content: center;
+
+    color: $newsTextColor;
+    font-size: 60%;
+    font-weight: lighter;
+}
+
+.upercase {
+    text-transform: uppercase;
 }
 
 /*
