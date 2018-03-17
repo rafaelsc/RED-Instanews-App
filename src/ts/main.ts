@@ -10,7 +10,7 @@ $(() => {
     //Debug
     setTimeout(()=>{
         console.log("Debug...");
-        $menu.val("world");
+        $menu.val("home");
         $menu.change();
     },500)
     //
@@ -59,7 +59,9 @@ $(() => {
 
         }).fail((err) => {
             throw err;
-        }).always(() => $spin.hide());
+        }).always(() => {
+            $spin.hide()
+        });
     });
 
 });

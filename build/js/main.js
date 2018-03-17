@@ -7,7 +7,7 @@ $(function () {
     $spin.hide();
     setTimeout(function () {
         console.log("Debug...");
-        $menu.val("world");
+        $menu.val("home");
         $menu.change();
     }, 500);
     $menu.change(function () {
@@ -44,6 +44,8 @@ $(function () {
             $news.show();
         }).fail(function (err) {
             throw err;
-        }).always(function () { return $spin.hide(); });
+        }).always(function () {
+            $spin.hide();
+        });
     });
 });
