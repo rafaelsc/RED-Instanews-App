@@ -44,13 +44,16 @@ a:link, a:visited, a:hover, a:active {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 80%; }
+  .header aside {
+    padding: .5rem;
+    margin: .5rem;
+    height: 60vw;
+    max-height: 300px;
+    width: 60vw;
+    max-width: 300px; }
   .header .logo {
     background-size: cover;
-    background-image: url("/img/nyt-logo.svg");
-    height: 50vw;
-    max-height: 300px;
-    width: 50vw;
-    max-width: 300px; }
+    background-image: url("/img/nyt-logo.svg"); }
   .header nav {
     padding: 5px;
     display: -webkit-inline-box;
@@ -67,23 +70,38 @@ a:link, a:visited, a:hover, a:active {
         -ms-flex-pack: center;
             justify-content: center; }
     .header nav label {
-      padding: 0 0 20px 0; }
+      padding: 0 0 1rem 0; }
   @media (min-width: 35rem) {
-    .header.dataLoaded {
+    .header {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row;
-      padding: 1vw; }
-      .header.dataLoaded .logo {
-        height: 10vw;
-        width: 10vw; } }
+      margin-left: -25vw;
+      font-size: 100%; }
+      .header aside {
+        height: 25vw;
+        width: 25vw; }
+      .header nav {
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start; } }
+  @media (min-width: 60rem) {
+    .header {
+      -webkit-box-pack: left;
+          -ms-flex-pack: left;
+              justify-content: left;
+      margin-left: 0; } }
+  @media (min-width: 35rem) {
+    .header.dataLoaded {
+      padding: 2vh;
+      margin-left: calc(-10vh - 2vh*2); }
+      .header.dataLoaded aside {
+        height: 10vh;
+        width: 10vh; } }
   @media (min-width: 60rem) {
     .header.dataLoaded {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
+      margin-left: 0; } }
 
 .news {
   -webkit-box-flex: 1;
@@ -140,7 +158,7 @@ a:link, a:visited, a:hover, a:active {
 .footer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  padding: 2rem 0px 1rem 0px;
+  padding: 2rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -150,6 +168,14 @@ a:link, a:visited, a:hover, a:active {
   color: #c2c2c2;
   font-size: 60%;
   font-weight: lighter; }
+  @media (min-width: 35rem) {
+    .footer {
+      font-size: 100%; } }
+  @media (min-width: 60rem) {
+    .footer {
+      -webkit-box-pack: left;
+          -ms-flex-pack: left;
+              justify-content: left; } }
 
 /*
  * Remove text-shadow in selection highlight:

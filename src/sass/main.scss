@@ -47,13 +47,18 @@ a:link, a:visited, a:hover, a:active {
 
     font-size: 80%;
 
+    aside {
+        padding: .5rem;
+        margin: .5rem;
+
+        height: 60vw;
+        max-height: 300px;
+        width: 60vw;
+        max-width: 300px;
+    }
     .logo {
         background-size: cover;
         background-image: url("/img/nyt-logo.svg");
-        height: 50vw;
-        max-height: 300px;
-        width: 50vw;
-        max-width: 300px;
     }
     nav {
         padding: 5px;
@@ -62,33 +67,46 @@ a:link, a:visited, a:hover, a:active {
         align-items: center;
         justify-content: center;
         label {
-            padding: 0 0 20px 0;
+            padding: 0 0 1rem 0;
         }
+    }
+
+    @media(min-width: 35rem) {
+        flex-direction: row;
+        margin-left: -25vw;
+        font-size: 100%;
+        aside {
+            height: 25vw;
+            width: 25vw;
+        }
+        nav {
+            align-items: flex-start;
+        }
+    }
+    @media(min-width: 60rem) {
+        // align-items: flex-start;
+        justify-content: left;
+        margin-left: 0;
     }
 
     &.dataLoaded{
 
         @media(min-width: 35rem) {
-            flex-direction: row;
-
-            padding: 1vw;
-
-            .logo {
-                height: 10vw;
-                width: 10vw;
+            padding: 2vh;
+            margin-left: calc(-10vh - 2vh*2);
+            aside {
+                height: 10vh;
+                width: 10vh;
             }
         }
         @media(min-width: 60rem) {
-            flex-direction: row;
+            margin-left: 0;
         }
-
-        // .logo{
-        //     height: 60px;
-        //     width: 60px;
-        // }
     }
 }
+.spin {
 
+}
 .news {
     flex: 1 0 auto;
 
@@ -175,13 +193,20 @@ a:link, a:visited, a:hover, a:active {
 .footer {
     flex-shrink: 0;
 
-    padding: 2rem 0px 1rem 0px;
+    padding: 2rem;
     display: inline-flex;
     justify-content: center;
 
     color: $lightTextColor;
     font-size: 60%;
     font-weight: lighter;
+
+    @media(min-width: 35rem) {
+        font-size: 100%;
+    }
+    @media(min-width: 60rem) {
+        justify-content: left;
+    }
 }
 
 /*

@@ -13,16 +13,14 @@ $(() => {
         $menu.val("world");
         $menu.change();
     },500)
-
     //
 
     $menu.change(() => {
-
-        // console.log("menu change");
-
         const val = $menu.val();
         if (!val) {
-            $news.hide();
+            $header.removeClass("dataLoaded");
+            $news.hide()
+                 .empty();
             return;
         }
 
@@ -56,6 +54,7 @@ $(() => {
 
             // console.log("To Samll");
             $header.addClass("dataLoaded");
+            $news.show();
             // console.log("Done");
 
         }).fail((err) => {

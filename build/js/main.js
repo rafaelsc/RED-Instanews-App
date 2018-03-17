@@ -13,7 +13,9 @@ $(function () {
     $menu.change(function () {
         var val = $menu.val();
         if (!val) {
-            $news.hide();
+            $header.removeClass("dataLoaded");
+            $news.hide()
+                .empty();
             return;
         }
         $spin.show();
@@ -39,6 +41,7 @@ $(function () {
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
             $header.addClass("dataLoaded");
+            $news.show();
         }).fail(function (err) {
             throw err;
         }).always(function () { return $spin.hide(); });
