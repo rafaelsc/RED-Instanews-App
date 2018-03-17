@@ -22,6 +22,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+a:link, a:visited, a:hover, a:active {
+  color: #fff; }
+
 .header {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -39,7 +42,8 @@ body {
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  font-size: 80%; }
   .header .logo {
     background-size: cover;
     background-image: url("/img/nyt-logo.svg");
@@ -79,7 +83,7 @@ body {
           justify-content: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 50%; }
+  font-size: 100%; }
   .news .news-item {
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -91,16 +95,31 @@ body {
       .news .news-item {
         width: 25%; } }
     .news .news-item figure {
+      position: relative;
       overflow: hidden; }
       .news .news-item figure img {
         -o-object-fit: fill;
            object-fit: fill;
         width: 100%;
-        display: block; }
+        display: block;
+        max-width: 100%;
+        height: auto; }
       .news .news-item figure figcaption {
-        display: none;
-        background: rgba(0, 0, 0, 0.75);
-        color: white; }
+        background: rgba(0, 0, 0, 0.4);
+        line-height: 1.4;
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        -webkit-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out; }
+      .news .news-item figure:hover figcaption {
+        opacity: 1; }
 
 .footer {
   -ms-flex-negative: 0;
@@ -115,9 +134,6 @@ body {
   color: #c2c2c2;
   font-size: 60%;
   font-weight: lighter; }
-
-.upercase {
-  text-transform: uppercase; }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -192,6 +208,9 @@ textarea {
 .hidden {
   display: none !important; }
 
+.upercase {
+  text-transform: uppercase; }
+
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -264,31 +283,10 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-  .header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    /* align-items: center; */
-    /* justify-content: center; */ }
-  .header > nav {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    /* justify-content: center; */ } }
+  /* Style adjustments for viewports that meet the condition */ }
 
 @media only screen and (min-width: 60em) {
-  /* Style adjustments for viewports that meet the condition */
-  body {
-    display: inline; }
-  .header {
-    /* align-self: flex-start; */
-    /* align-items: flex-start; */
-    /* justify-content: center; */ }
-  .header > nav {
-    /* align-items: flex-start; */
-    /* justify-content: center; */ } }
+  /* Style adjustments for viewports that meet the condition */ }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }

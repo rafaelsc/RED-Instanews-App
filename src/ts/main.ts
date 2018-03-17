@@ -8,11 +8,11 @@ $(() => {
     $spin.hide()
 
     //Debug
-    // setTimeout(()=>{
-    //     console.log("Debug...");
-    //     $menu.val("world");
-    //     $menu.change();
-    // },500)
+    setTimeout(()=>{
+        console.log("Debug...");
+        $menu.val("world");
+        $menu.change();
+    },500)
 
     //
 

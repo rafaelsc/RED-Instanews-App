@@ -5,6 +5,11 @@ $(function () {
     var $spin = $("#spin");
     var $news = $("#news");
     $spin.hide();
+    setTimeout(function () {
+        console.log("Debug...");
+        $menu.val("world");
+        $menu.change();
+    }, 500);
     $menu.change(function () {
         var val = $menu.val();
         if (!val) {

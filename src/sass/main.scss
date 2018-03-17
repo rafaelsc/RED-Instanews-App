@@ -1,7 +1,8 @@
-$basetextSize: 16px;
-$textColor: #fff;
+$baseTextSize: 16px;
 $backgroundColor: #111;
-$newsTextColor: #c2c2c2;
+$textColor: #fff;
+$lightTextColor: #c2c2c2;
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -9,7 +10,7 @@ $newsTextColor: #c2c2c2;
 html {
     background-color: $backgroundColor;
     color: $textColor;
-    font-size: $basetextSize;
+    font-size: $baseTextSize;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.4;
 }
@@ -31,6 +32,10 @@ body {
     // flex: 1 0 auto;
 }
 
+a:link, a:visited, a:hover, a:active {
+    color: $textColor;
+}
+
 .header {
     flex: 1 0 auto;
 
@@ -39,6 +44,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    font-size: 80%;
 
     .logo {
         background-size: cover;
@@ -84,10 +91,9 @@ body {
 
     box-sizing: border-box;
 
-    font-size: 50%;
+    font-size: 100%;
 
     .news-item {
-        // display: flex;
         width: 100%;
         box-sizing: border-box;
 
@@ -98,9 +104,9 @@ body {
             width: 25%;
         }
         figure {
-            // display: block;
-            // position: relative;
+            position: relative;
             overflow: hidden;
+
             .img-holder {
                 //                 &::before {
                 //     content: "";
@@ -112,18 +118,36 @@ body {
                 object-fit: fill;
                 width: 100%;
 
-                // max-width: 100%;
                 display: block;
-                // position: relative;
+                max-width: 100%;
+                height: auto;
 
             }
             figcaption {
-                display: none;
-                // position: absolute;
-                background: rgba(0, 0, 0, 0.75);
-                color: white;
-                // padding: 10px 20px;
-                // font-size: 5px;
+                background: rgba(0, 0, 0, 0.4);
+                line-height: 1.4;
+                // color: white;
+                padding: 10px;
+
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                // width: 100%;
+                // color: #fff;
+
+                // padding: 0.75em 1em;
+                // font-weight: 700;
+                z-index: 2;
+
+                box-sizing: border-box;
+                background-color: rgba(0,0,0,.7);
+
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+            }
+            &:hover figcaption {
+                opacity: 1;
             }
         }
         // .img-holder {
@@ -148,13 +172,9 @@ body {
     display: inline-flex;
     justify-content: center;
 
-    color: $newsTextColor;
+    color: $lightTextColor;
     font-size: 60%;
     font-weight: lighter;
-}
-
-.upercase {
-    text-transform: uppercase;
 }
 
 /*
@@ -246,6 +266,12 @@ textarea {
     display: none !important;
 }
 
+
+.upercase {
+    text-transform: uppercase;
+}
+
+
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -329,31 +355,10 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
-    .header {
-        flex-direction: row;
-        /* align-items: center; */
-        /* justify-content: center; */
-    }
-    .header>nav {
-        align-items: flex-start;
-        /* justify-content: center; */
-    }
 }
 
 @media only screen and (min-width: 60em) {
     /* Style adjustments for viewports that meet the condition */
-    body {
-        display: inline;
-    }
-    .header {
-        /* align-self: flex-start; */
-        /* align-items: flex-start; */
-        /* justify-content: center; */
-    }
-    .header>nav {
-        /* align-items: flex-start; */
-        /* justify-content: center; */
-    }
 }
 
 @media print,
