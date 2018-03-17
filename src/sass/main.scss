@@ -62,24 +62,31 @@ a:link, a:visited, a:hover, a:active {
         align-items: center;
         justify-content: center;
         label {
-            padding: 20px 0;
+            padding: 0 0 20px 0;
         }
     }
 
-    // &.dataLoaded{
+    &.dataLoaded{
 
-    //     @media(min-width: 35rem) {
-    //         // width: 33.3333%;
-    //     }
-    //     @media(min-width: 60rem) {
-    //         // width: 25%;
-    //     }
+        @media(min-width: 35rem) {
+            flex-direction: row;
 
-    //     // .logo{
-    //     //     height: 60px;
-    //     //     width: 60px;
-    //     // }
-    // }
+            padding: 1vw;
+
+            .logo {
+                height: 10vw;
+                width: 10vw;
+            }
+        }
+        @media(min-width: 60rem) {
+            flex-direction: row;
+        }
+
+        // .logo{
+        //     height: 60px;
+        //     width: 60px;
+        // }
+    }
 }
 
 .news {

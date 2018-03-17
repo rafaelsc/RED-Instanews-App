@@ -67,7 +67,23 @@ a:link, a:visited, a:hover, a:active {
         -ms-flex-pack: center;
             justify-content: center; }
     .header nav label {
-      padding: 20px 0; }
+      padding: 0 0 20px 0; }
+  @media (min-width: 35rem) {
+    .header.dataLoaded {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      padding: 1vw; }
+      .header.dataLoaded .logo {
+        height: 10vw;
+        width: 10vw; } }
+  @media (min-width: 60rem) {
+    .header.dataLoaded {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
 
 .news {
   -webkit-box-flex: 1;
