@@ -74,7 +74,7 @@ a:active {
             justify-content: center; }
     .header nav label {
       padding: 0 0 1rem 0; }
-  @media (min-width: 35rem) {
+  @media (min-width: 35em) {
     .header {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -89,13 +89,13 @@ a:active {
         -webkit-box-align: start;
             -ms-flex-align: start;
                 align-items: flex-start; } }
-  @media (min-width: 60rem) {
+  @media (min-width: 60em) {
     .header {
       -webkit-box-pack: left;
           -ms-flex-pack: left;
               justify-content: left;
       margin-left: 0; } }
-  @media (min-width: 35rem) {
+  @media (min-width: 35em) {
     .header.dataLoaded {
       padding: 2vh;
       margin-left: calc(-10vh -10vh - 2vh*2); }
@@ -103,7 +103,7 @@ a:active {
         height: 10vh;
         width: 10vh;
         margin-right: 10vh; } }
-  @media (min-width: 60rem) {
+  @media (min-width: 60em) {
     .header.dataLoaded {
       margin-left: 0; } }
 
@@ -127,10 +127,13 @@ a:active {
     height: 400px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box; }
-    @media (min-width: 35rem) {
+    @media (min-width: 35em) {
+      .news .news-item {
+        width: 50%; } }
+    @media (min-width: 45em) {
       .news .news-item {
         width: 33.3333%; } }
-    @media (min-width: 60rem) {
+    @media (min-width: 60em) {
       .news .news-item {
         width: 25%; } }
     .news .news-item figure {
@@ -173,10 +176,10 @@ a:active {
   color: #c2c2c2;
   font-size: 60%;
   font-weight: lighter; }
-  @media (min-width: 35rem) {
+  @media (min-width: 35em) {
     .footer {
       font-size: 100%; } }
-  @media (min-width: 60rem) {
+  @media (min-width: 60em) {
     .footer {
       -webkit-box-pack: left;
           -ms-flex-pack: left;

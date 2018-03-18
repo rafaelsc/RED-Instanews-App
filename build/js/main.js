@@ -31,7 +31,6 @@ $(function () {
                 .slice(0, 12)
                 .map(function (val) {
                 var img = val.multimedia.slice(0, 6).reverse().slice(0, 1)[0];
-                console.log(val);
                 return {
                     "title": val.title,
                     "text": val.abstract,

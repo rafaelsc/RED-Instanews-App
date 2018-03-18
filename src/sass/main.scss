@@ -64,7 +64,7 @@ a:active {
             padding: 0 0 1rem 0;
         }
     }
-    @media(min-width: 35rem) {
+    @media(min-width: 35em) {
         flex-direction: row;
         margin-left: -25vw;
         font-size: 100%;
@@ -76,12 +76,12 @@ a:active {
             align-items: flex-start;
         }
     }
-    @media(min-width: 60rem) {
+    @media(min-width: 60em) {
         justify-content: left;
         margin-left: 0;
     }
     &.dataLoaded {
-        @media(min-width: 35rem) {
+        @media(min-width: 35em) {
             padding: 2vh;
             margin-left: calc(-10vh -10vh - 2vh*2);
             aside {
@@ -90,7 +90,7 @@ a:active {
                 margin-right: 10vh;
             }
         }
-        @media(min-width: 60rem) {
+        @media(min-width: 60em) {
             margin-left: 0;
         }
     }
@@ -109,10 +109,13 @@ a:active {
         width: 100%;
         height: 400px;
         box-sizing: border-box;
-        @media(min-width: 35rem) {
+        @media(min-width: 35em) {
+            width: 50%;
+        }
+        @media(min-width: 45em) {
             width: 33.3333%;
         }
-        @media(min-width: 60rem) {
+        @media(min-width: 60em) {
             width: 25%;
         }
         figure {
@@ -169,10 +172,10 @@ a:active {
     color: $lightTextColor;
     font-size: 60%;
     font-weight: lighter;
-    @media(min-width: 35rem) {
+    @media(min-width: 35em) {
         font-size: 100%;
     }
-    @media(min-width: 60rem) {
+    @media(min-width: 60em) {
         justify-content: left;
     }
 }
