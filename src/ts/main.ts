@@ -40,9 +40,10 @@ $(() => {
                                      .slice(0, 12)
                                      .map((val) => {
                 const img = val.multimedia.slice(0,6).reverse().slice(0,1)[0];
-                // console.log(img);
+                console.log(val);
                 return {
                     "title": val.title,
+                    "text": val.abstract,
                     "linkUrl" : val.short_url,
                     "img": img.url,
                     "imgCap": img.caption
