@@ -28,7 +28,7 @@ body {
     // align-items: center;
     // justify-content: center;
     align-items: center;
-    // flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 a:link,
@@ -183,6 +183,11 @@ a:active {
         justify-content: left;
     }
 }
+
+/* ==========================================================================
+   ==========================================================================
+   ========================================================================== */
+
 
 /*
  * Remove text-shadow in selection highlight:
