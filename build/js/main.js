@@ -5,11 +5,6 @@ $(function () {
     var $spin = $("#spin");
     var $news = $("#news");
     $spin.hide();
-    setTimeout(function () {
-        console.log("Debug...");
-        $menu.val("home");
-        $menu.change();
-    }, 1500);
     $menu.change(function () {
         $spin.hide();
         $news.empty();
