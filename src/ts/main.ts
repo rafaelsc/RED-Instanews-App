@@ -1,11 +1,13 @@
 $(() => {
     const newsTemplate = $.templates("#news-item-template");
-    const $header = $(".header");
+
+    const $body = $("body")
+    //const $header = $(".header");
     const $menu = $("#sections");
     const $spin = $("#spin");
     const $news = $("#news");
+    const $main = $("#main");
 
-    $spin.hide()
 
     $menu.selectric();
 
@@ -24,12 +26,13 @@ $(() => {
 
         const val = $menu.val();
         if (!val) {
-            $header.removeClass("dataLoaded");
-            $news.hide();
+            $body.removeClass("dataLoaded");
+            $main.hide();
             return;
         }
 
-        $header.addClass("dataLoaded");
+        $body.addClass("dataLoaded");
+        $main.show();
         $spin.show();
 
         // return;
@@ -62,7 +65,7 @@ $(() => {
             // console.log(data);
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-            $news.show();
+
             // console.log("Done");
 
         }).fail((err) => {

@@ -1,21 +1,22 @@
 $(function () {
     var newsTemplate = $.templates("#news-item-template");
-    var $header = $(".header");
+    var $body = $("body");
     var $menu = $("#sections");
     var $spin = $("#spin");
     var $news = $("#news");
-    $spin.hide();
+    var $main = $("#main");
     $menu.selectric();
     $menu.change(function () {
         $spin.hide();
         $news.empty();
         var val = $menu.val();
         if (!val) {
-            $header.removeClass("dataLoaded");
-            $news.hide();
+            $body.removeClass("dataLoaded");
+            $main.hide();
             return;
         }
-        $header.addClass("dataLoaded");
+        $body.addClass("dataLoaded");
+        $main.show();
         $spin.show();
         var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
@@ -39,7 +40,6 @@ $(function () {
             });
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-            $news.show();
         }).fail(function (err) {
             throw err;
         }).always(function () {

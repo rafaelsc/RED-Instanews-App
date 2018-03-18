@@ -3,6 +3,7 @@ $backgroundColor: #111;
 $textColor: #fff;
 $lightTextColor: #c2c2c2;
 
+$newsItemHeight: 400px;
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -93,7 +94,7 @@ a:active {
         justify-content: left;
         margin-left: 0;
     }
-    &.dataLoaded {
+    .dataLoaded & {
         @media(min-width: 35em) {
             padding: 2vh;
             margin-left: calc(-10vh -10vh - 2vh*2);
@@ -110,20 +111,9 @@ a:active {
 
 }
 
-#spin {
-    padding: 2rem 0;
-    height: 60px;
-    width: 60px;
-
-    position: relative;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-}
-
 .news {
+    width: 100vw;
+    height: $newsItemHeight * 3;
     flex: 1 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -132,7 +122,7 @@ a:active {
     font-size: 100%;
     .news-item {
         width: 100%;
-        height: 400px;
+        height: $newsItemHeight;
         box-sizing: border-box;
         @media(min-width: 35em) {
             width: 50%;
@@ -172,6 +162,20 @@ a:active {
                 opacity: 1;
             }
         }
+    }
+}
+#spin {
+    padding: 2rem 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 60px;
+        width: 60px;
     }
 }
 
