@@ -28,8 +28,9 @@ $(() => {
 
         var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
-            'api-key': "7dd8ef3de3434176a64908eb393d70db" //TODO Get a API Key
+            'api-key': "7dd8ef3de3434176a64908eb393d70db"
         });
+
         $.ajax({
             url: url,
             method: 'GET',
