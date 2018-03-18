@@ -7,7 +7,7 @@ $(() => {
 
     $spin.hide()
 
-    // $menu.selectric();
+    $menu.selectric();
 
     //Debug
     // setTimeout(()=>{

@@ -82,7 +82,7 @@ a:active {
             justify-content: center; }
     .header nav label {
       padding: 0 0 1rem 0; }
-    .header nav select {
+    .header nav select, .header nav .selectric-wrapper {
       width: 100%; }
   @media (min-width: 35em) {
     .header {

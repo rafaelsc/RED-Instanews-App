@@ -5,6 +5,7 @@ $(function () {
     var $spin = $("#spin");
     var $news = $("#news");
     $spin.hide();
+    $menu.selectric();
     $menu.change(function () {
         $spin.hide();
         $news.empty();
