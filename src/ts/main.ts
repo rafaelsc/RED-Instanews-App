@@ -40,8 +40,9 @@ $(() => {
             var data = result.results.filter(r => r.multimedia && r.multimedia.length > 0 )
                                      .slice(0, 12)
                                      .map((val) => {
-                const img = val.multimedia.slice(0,6).reverse().slice(0,1)[0];
                 // console.log(val);
+                const img = val.multimedia.slice(0).reverse()[0];
+                // console.log(img.caption);
                 return {
                     "title": val.title,
                     "text": val.abstract,
