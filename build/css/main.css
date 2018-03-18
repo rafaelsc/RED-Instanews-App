@@ -162,7 +162,7 @@ a:active {
            object-fit: cover;
         display: block; }
       .news .news-item figure figcaption {
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
         line-height: 1.4;
         padding: 10px;
         position: absolute;
@@ -171,7 +171,6 @@ a:active {
         z-index: 2;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        background-color: rgba(0, 0, 0, 0.7);
         opacity: 0;
         -webkit-transition: opacity .3s ease-in-out;
         transition: opacity .3s ease-in-out; }
