@@ -12,19 +12,25 @@ $(() => {
         console.log("Debug...");
         $menu.val("home");
         $menu.change();
-    },500)
+    },1500)
     //
 
     $menu.change(() => {
+
+        $spin.hide();
+        $news.empty();
+
         const val = $menu.val();
         if (!val) {
             $header.removeClass("dataLoaded");
-            $news.hide()
-                 .empty();
+            $news.hide();
             return;
         }
 
+        $header.addClass("dataLoaded");
         $spin.show();
+
+        // return;
 
         var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
@@ -54,9 +60,6 @@ $(() => {
             // console.log(data);
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-
-            // console.log("To Samll");
-            $header.addClass("dataLoaded");
             $news.show();
             // console.log("Done");
 

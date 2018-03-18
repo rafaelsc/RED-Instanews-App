@@ -17,7 +17,10 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/regular.css" integrity="sha384-A/oR8MwZKeyJS+Y0tLZ16QIyje/AmPduwrvjeH6NLiLsp4cdE4uRJl8zobWXBm4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300">
+
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/build/css/main.min.css">
  </head>
@@ -62,13 +65,12 @@
                 <option value="world">World</option>
             </select>
         </nav>
-
     </header>
 
-    <main class="">
-        <div id="spin"></div>
-        <div id="news" class="news">
-        </div>
+    <main class="main">
+        <div id="spin" class="hide"><img src="img/ajax-loader.gif" alt="Loading..." /></div>
+        <ul id="news" class="news">
+        </ul>
     </main>
 
     <footer class="footer">
@@ -77,14 +79,14 @@
 
     <!-- Templates -->
     <script id="news-item-template" type="text/x-jsrender">
-        <div class="news-item">
+        <li class="news-item">
             <a href="{{:linkUrl}}" target="_blank" rel="noopener noreferrer nofollow">
                 <figure>
                     <img src="{{:img}}" alt="{{:imgCap + title}}">
                     <figcaption>{{:text}}</figcaption>
                 </figure>
             </a>
-        </div>
+        </li>
     </script>
 
     <!-- TODO Adds CRC for Scripts -->
@@ -102,7 +104,7 @@
     <script src="js/plugins.js"></script>
     <script defer src="build/js/main.min.js"></script>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
 </body>
 
 </html>

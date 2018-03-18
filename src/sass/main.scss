@@ -2,6 +2,7 @@ $baseTextSize: 16px;
 $backgroundColor: #111;
 $textColor: #fff;
 $lightTextColor: #c2c2c2;
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -20,10 +21,13 @@ html {
 
 body {
     width: 100%;
-    height: 100vh; // overflow: hidden;
+    height: 100vh;
+    // overflow: hidden;
     display: flex;
-    flex-direction: column; // align-items: center;
+    flex-direction: column;
+    // align-items: center;
     // justify-content: center;
+    align-items: center;
     // flex: 1 0 auto;
 }
 
@@ -96,7 +100,18 @@ a:active {
     }
 }
 
-.spin {}
+#spin {
+    padding: 2rem 0;
+    height: 60px;
+    width: 60px;
+
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
 
 .news {
     flex: 1 0 auto;
@@ -149,18 +164,7 @@ a:active {
             &:hover figcaption {
                 opacity: 1;
             }
-        } // .img-holder {
-        //     height: 80px;
-        //     width: 80px;
-        //     background-image: url("/img/nyt-logo.svg");
-        //     background-size: 80px;
-        //     img {
-        //     }
-        //     .no-img {
-        //         width: 100%;
-        //         height: 100%;
-        //     }
-        // }
+        }
     }
 }
 
@@ -264,6 +268,10 @@ textarea {
 /*
  * Hide visually and from screen readers
  */
+ .hide {
+    display: none;
+}
+
 
 .hidden {
     display: none !important;
