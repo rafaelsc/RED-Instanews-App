@@ -10,7 +10,7 @@
         "target": "es3",
         "downlevelIteration": true,
         "lib": [
-            "dom"
+            "es2015","dom"
         ]
     },
     "include": [
