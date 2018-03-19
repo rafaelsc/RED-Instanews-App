@@ -11,12 +11,11 @@
 * Semantic HTML, Using the new **Tags**:
   * _header_,
   * _footer_,
-  * _section_,
+  * _main_,
   * _aside_,
   * _nav_,
-  * **and mush more...**
 
-### SASS
+### SASS/CSS
 
 * SASS
 * CSS 3
@@ -29,7 +28,7 @@
 * Google Fonts
 * Font Awesome
 
-### Typescript
+### Typescript/Javascript
 
 * JQuery
 * JRender
