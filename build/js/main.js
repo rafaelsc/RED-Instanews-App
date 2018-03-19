@@ -4,7 +4,6 @@ $(function () {
     var $menu = $("#sections");
     var $spin = $("#spin");
     var $news = $("#news");
-    var $main = $("#main");
     $menu.selectric();
     $menu.change(function () {
         $spin.hide();

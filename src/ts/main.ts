@@ -1,13 +1,10 @@
 $(() => {
     const newsTemplate = $.templates("#news-item-template");
 
-    const $body = $("body")
-    //const $header = $(".header");
+    const $body = $("body");
     const $menu = $("#sections");
     const $spin = $("#spin");
     const $news = $("#news");
-    const $main = $("#main");
-
 
     $menu.selectric();
 
@@ -17,7 +14,6 @@ $(() => {
     //     $menu.val("home");
     //     $menu.change();
     // },1500)
-    //
 
     $menu.change(() => {
 
@@ -34,7 +30,6 @@ $(() => {
         $body.addClass("dataLoaded");
         $spin.show();
 
-        // return;
 
         var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
@@ -45,14 +40,11 @@ $(() => {
             url: url,
             method: 'GET',
         }).done((result) => {
-            // console. log(result);
 
             var data = result.results.filter(r => r.multimedia && r.multimedia.length > 0 )
                                      .slice(0, 12)
                                      .map((val) => {
-                // console.log(val);
                 const img = val.multimedia.slice(0).reverse()[0];
-                // console.log(img.caption);
                 return {
                     "title": val.title,
                     "text": val.abstract,
@@ -61,11 +53,9 @@ $(() => {
                     "imgCap": img.caption
                 }
             });
-            // console.log(data);
+
             var htmlOutput = newsTemplate.render(data);
             $news.html(htmlOutput);
-
-            // console.log("Done");
 
         }).fail((err) => {
             throw err;
