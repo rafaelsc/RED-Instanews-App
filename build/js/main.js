@@ -5,6 +5,11 @@ $(function () {
     var $spin = $("#spin");
     var $news = $("#news");
     $menu.selectric();
+    setTimeout(function () {
+        console.log("Debug...");
+        $menu.val("home");
+        $menu.change();
+    }, 1500);
     $menu.change(function () {
         $spin.hide();
         $news.empty();
@@ -16,6 +21,7 @@ $(function () {
         }
         $body.addClass("dataLoaded");
         $spin.show();
+        return;
         var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
             'api-key': "7dd8ef3de3434176a64908eb393d70db"
