@@ -1,7 +1,7 @@
 {
   "name": "red-instanews-app",
   "version": "1.0.0",
-  "description": "Get lastest news from NYT ",
+  "description": "s",
   "main": "index.js",
   "devDependencies": {
     "@types/es6-promise": "^3.3.0",
