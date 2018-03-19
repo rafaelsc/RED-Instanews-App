@@ -30,18 +30,19 @@ html {
 body {
     width: 100%;
     height: 100vh;
-    // overflow: hidden;
     display: flex;
     flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
     align-items: center;
-    // flex: 1 0 auto;
-
+    justify-content: flex-start;
+    @media(min-width: 35em) {
+        // align-items: flex-start;
+    }
     @media(min-width: 60em) {
         align-items: flex-start;
     }
-
+    // .dataLoaded & {
+    //     justify-content: flex-start;
+    // }
 }
 
 a:link,
@@ -101,6 +102,8 @@ a:active {
         margin-left: 0;
     }
     .dataLoaded & {
+        flex: 0 0 auto;
+
         @media(min-width: 35em) {
             padding: 2vh;
             margin-left: calc(-10vh -10vh - 2vh*2);
@@ -119,7 +122,7 @@ a:active {
 
 .news {
     width: 100vw;
-    height: $newsItemHeight * 3;
+    height: auto;
     flex: 1 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -170,15 +173,23 @@ a:active {
         }
     }
 }
-#spin {
+
+.dataLoaded .main {
+    flex: 1 0 auto;
+}
+
+.spin {
     padding: 2rem 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
+    span{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     img {
         height: 60px;
         width: 60px;
@@ -372,91 +383,4 @@ textarea {
 
 .clearfix:after {
     clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media only screen and (min-width: 60em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-    thead {
-        display: table-header-group;
-    }
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }

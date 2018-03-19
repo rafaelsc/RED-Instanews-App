@@ -27,13 +27,14 @@ $(() => {
         const val = $menu.val();
         if (!val) {
             $body.removeClass("dataLoaded");
-            $main.hide();
+            $spin.hide();
             return;
         }
 
         $body.addClass("dataLoaded");
-        $main.show();
         $spin.show();
+
+        // return;
 
         var url = "//api.nytimes.com/svc/topstories/v2/" + val + ".json";
         url += '?' + $.param({
