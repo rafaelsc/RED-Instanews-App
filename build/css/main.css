@@ -325,7 +325,7 @@ a:active {
     max-width: 300px; }
   .header .logo {
     background-size: cover;
-    background-image: url("/img/nyt-logo.svg"); }
+    background-image: url("../../img/nyt-logo.svg"); }
   .header nav {
     padding: 5px;
     display: -webkit-inline-box;
