@@ -69,6 +69,15 @@
 * SASS
 * GULP
 
+
+-----------------------------------------------
+
+## Installation instructions
+
+Run these commands to start the project:  
+* npm install
+* gulp
+
 -----------------------------------------------
 ## Licence
 

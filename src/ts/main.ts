@@ -8,13 +8,7 @@ $(() => {
 
     $menu.selectric();
 
-    //Debug
-    // setTimeout(()=>{
-    //     console.log("Debug...");
-    //     $menu.val("home");
-    //     $menu.change();
-    // },1500)
-
+    
     $menu.change(() => {
 
         $spin.hide();
