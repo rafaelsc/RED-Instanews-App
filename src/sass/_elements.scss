@@ -1,0 +1,35 @@
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html {
+    background-color: $backgroundColor;
+    color: $textColor;
+    font-size: $baseTextSize;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Custom styles
+   ========================================================================== */
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    @media(min-width: 60em) {
+        align-items: flex-start;
+    }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: $textColor;
+}
