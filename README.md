@@ -2,6 +2,8 @@
 
 A AJAX Application to show the New York Times News. - [https://rafaelsc.github.io/RED-Instanews-App/](https://rafaelsc.github.io/RED-Instanews-App/)
 
+
+![Instanews](https://github.com/rafaelsc/RED-Instanews-App/raw/master/_instanews.jpg)
 -----------------------------------------------
 
 ## Used Technologics
